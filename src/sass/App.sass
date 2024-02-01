@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@500&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&display=swap')
+
+$mainColor: #8B3C7F
+$secondColor: #fae3f6
+$thirdColor: #a3759c
+$fourthColor: rgba(250, 227, 246, 0.253)
+$fifthColor: rgb(99, 99, 99)
+$sixthColor: #fdeffb
+$seventhColor: rgb(88, 62, 85)
+$eighthColor: #665965
+$nineColor: rgba(0, 0, 0, 0.205)
+$tenthColor: #f1c5ea
+$eleventhColor: #bd59ae
+$twelveColor : #f5e3f5
+
+*
+    min-width: 0
+
+html
+    position: relative
+    scroll-behavior: smooth
+body
+    position: absolute
+    top: 0
+    width: 100%
+    font-family: 'Raleway', sans-serif
+    overflow-x: hidden
+#root
+    width: 100dvw
+    display: flex
+    flex-direction: column
+    min-height: 100dvh
+
+nav .mainLink 
+    color: $mainColor
+a
+    text-decoration: none
+header
+    display: flex
+    background: #ffffff
+    justify-content: space-between
+    align-items: center
+    z-index: 999
+    padding: 0 30px
+    width: 100dvw
+    height: 60px
+    top: 0
+    .leftPart
+        h1
+            color: $mainColor
+            font-family: 'Alex Brush'
+    .rightPart
+        display: flex
+        justify-content: space-between
+        width: fit-content
+        a
+            display: block
+            width: 40px
+            height: 40px
+            background: $secondColor
+            border-radius: 50px
+            img
+                display: block
+                width: 70%
+                height: 70%
+                margin: 15%
+.SearchPart
+    width: 100%
+    text-align: center
+    color: #fff
+    height: 350px
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    background: $mainColor
+    overflow: hidden
+    position: relative
+    h1
+        margin-top: 0
+        font-size: 3rem
+        z-index: 2
+        font-family: 'Long Cang', cursive
+
+    p
+        padding: 0 clamp(10px, calc(10vw + 10px), 200px)
+        color: #fff
+        opacity: .8
+        font-size: 1rem
+    
+    .container div
+        position: absolute
+        bottom: 0
+        background-color: $fourthColor
+        width: 200px
+        height: 200px
+        z-index: 2
+        &:nth-child(3)
+            right: -120px
+            top: 20px
+            transform: rotate(60deg)
+        &:nth-child(4)
+            left: -120px
+            top: 20px
+            transform: rotate(60deg)
+        &:nth-child(5)
+            left: -120px
+            bottom: 0
+            transform: rotate(60deg)
+        &:nth-child(6)
+            right: -120px
+            bottom: 0
+            transform: rotate(60deg)
+
+.ContPart
+    width: 100%
+    top: calc( 60px + 350px )
+    margin:
+        top: 50px
+        bottom: 50px
+    .container
+        gap: 30px
+
+        .card
+            background-color: $sixthColor
+            box-shadow: 0px 0px 10px -5px black
+            cursor: pointer
+            border-radius: 11px
+            padding: 20px
+            text-decoration: none
+            height: 200px
+            transition: transform 0.2s linear
+            transform: scale(1)
+            &:hover
+                background-color: $secondColor
+                box-shadow: 0px 0px 13px -5px black
+                transform: scale(1.05)
+            .cardHeader
+                display: flex
+                align-items: center
+                h3
+                    color: $seventhColor
+                    text-decoration: none
+                span
+                    width: 40px
+                    height: 40px
+                    background: #d8bad3
+                    border-radius: 50%
+                    margin-right: 15px
+                    img
+                        width: 70%
+                        height: 70%
+                        margin: 15%
+            .cardBody
+                p
+                    color: $eighthColor
+.navLogo
+    width: 30px
+    height: 25px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    cursor: pointer
+    span
+        display: block
+        width: 100%
+        height: 3px
+        background: $mainColor
+
+
+
+nav
+    width: 20dvw
+    height: calc( 100dvh - 60px )
+    position: absolute
+    top: 60px
+    background: white
+    left: 0
+    z-index: 99
+    overflow-y: none
+    border-right: 2px solid $nineColor
+    padding-top: 0
+    overflow-y: auto
+    .mainLink
+        padding: 20px
+        margin: 10px
+        transition: all 0.5s ease
+    .lastLink
+        margin-bottom: 50px
+    ul
+        li
+            a
+                text-decoration: none
+                display: flex
+                align-items: center
+                margin: 5px
+                &.cssClasses
+                    margin-bottom: 10px
+                    margin-left: 20px
+                &:active
+                    color: $thirdColor
+                span
+                    display: block
+                    width: 13px
+                    height: 13px
+                    margin-left: 15px
+                    img
+                        width: 100%
+            ul
+                margin-top: 10px !important
+                margin:
+                    left: 5px !important
+                a
+                    content: ""
+    .usageList
+        ul
+            margin-top: -40px
+            li
+                margin: 0
+                margin-left: 20px
+                a
+                    font-size: 13px
+                    color: $eleventhColor
+
+.DocsContPart
+    width: 80dvw
+    height: calc( 100dvh - 60px )
+    position: absolute
+    left: 20dvw
+    top: 60px
+    overflow-y: scroll
+
+    h1
+        text-align: center
+        color: $mainColor
+        font-size: clamp(2rem , 7vw , 3rem)
+        font-family: 'Chivo Mono', monospace
+    p
+        line-height: 1.3
+        color: #333
+    h2
+        color: $seventhColor
+.insta
+    .byNpm
+        button
+            background-color: #fae3f6
+            transition: all 0.2s linear
+            border: 4px solid #a3759c !important
+            &:hover
+                border-color: #8B3C7F !important
+        a
+            text-decoration: none
+            color: #180020
+
+.instaNav
+    width: 100%
+    max-width: 400px
+    height: 100px
+    margin: 50px auto
+    display: flex
+    justify-content: space-around
+    align-items: center
+    a
+        display: block
+        text-transform: capitalize
+        text-decoration: none
+        padding: 20px 30px 
+        color: $fifthColor
+        background-color: $secondColor
+        border-radius: 10px 10px 0 0 
+@media (max-width: 450px) 
+    .instaNav
+        flex-direction: column
+        height: 240px !important
+        a
+            margin-bottom: 20px
+
+
+.sweetAlertStyle
+    background-color: #f8f4f8
+.code
+    background: $twelveColor
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px
+    border-radius: 20px
+    margin: 0 auto
+    max-width: 700px
+    word-wrap: break-word
+    span
+        display: block
+        width: 30px
+        height: 30px
+        cursor: pointer
+        position: relative
+        transition: all 0.7s
+        &::after
+            content: "copy"
+            position: absolute
+            font-size: 12px
+            background: black
+            color: white
+            padding: 5px
+            border-radius: 7px
+            top: -27px
+            left: -7px
+            opacity: 0
+            transition: all 0.2s
+
+        &:hover
+            &::after
+                opacity: 1
+        img
+            width: 30px
+            height: 30px
+.usage
+    h3
+        margin-left: 20px
+        color: $eleventhColor
+    .disc
+        margin-left: 20px
+    .classes
+        margin:
+            left: 40px
+    br
+        margin:
+            top: 10px
+        display: block
+.navLogo
+    display: none
+    transition: all 0.5s
+.ex
+    span
+        transition: all 0.7s linear
+        border-radius: 20px
+        &:first-child
+            transform: rotate(50deg) translate(5px ,10px)
+            width: 105%
+        &:nth-child(2)
+            opacity: 0
+        &:last-child
+            transform: rotate(-50deg) translate(5px ,-10px)
+            width: 105%
+.def
+    transform: rotate(0deg) translate(0px , 0px)
+    span
+        width: 100%
+        transition: all 0.7s linear
+
+.intro
+    h3
+        color: $thirdColor
+    strong
+        color: $seventhColor
+.howToInstallItBtn
+    border: 4px solid $thirdColor !important
+    background-color: $secondColor
+    transition: all 0.2s linear
+    &:hover
+        border-color: $mainColor !important
+
+.dropDown
+    padding: 50px
+    background: $twelveColor
+    transition: all 0.5s
+    display: flex
+    flex-direction: column
+    gap: 20px
+    &Head
+        display: flex
+        justify-content: space-between
+        span
+            width: 20px
+            img
+                height: 100%
+                width: 100%
+        p
+            margin: 0
+            font-size: 18px
+            max-width: 70%
+    &Body
+        height: 100%
+        min-height: 0
+        overflow-y: hidden
+        transition: all 0.5s
+    &.expended
+        min-height: 100px
+
+footer
+    height: 40px
+    display: flex
+    justify-content: center
+    align-items: center
+    flex: 1
+    background-color: #925d8a
+    color: #fff
+    text-align: center
+@media (max-width: 767px )
+    .DocsContPart
+        width: 100dvw !important
+        left: 0 !important
+    .leftPart
+        position: relative
+        left: 10px
+    .rightPart
+        a
+            width: 25px !important
+            height: 25px !important
+    .navLogo
+        display: flex
+    nav
+        width: 50dvw
+        box-shadow: 10px 0px 9999px 100px black
+        left: -100%
+        transition: all 0.7s linear
+@media (min-width: 767px)
+    nav
+        display: block !important
+
+
