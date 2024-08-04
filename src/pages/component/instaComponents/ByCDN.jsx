@@ -9,7 +9,7 @@ function ByCDN() {
         In the `{"<head>"}` section of your HTML file, add the following link to
         include FHF via CDN:
       </p>
-      <Code>
+      <Code long="xml">
         {`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fhf/dist/main.min.css">`}
       </Code>
       <p className="respP">or</p>

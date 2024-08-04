@@ -1,33 +1,29 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import DownOrUp from "../component/DownOrUp";
 import { RespHeading, mergeStyles, styles } from "fhf-react";
 
-export default function DropDown({ dropDownHeadContent, children }) {
+export default function DropDown({
+  dropDownHeadContent,
+  children,
+  style = {},
+}) {
   const [upOrDown, setUpOrDown] = useState(false);
-  const [bodyHeight, setBodyHeight] = useState(0);
   const bodyRef = useRef(null);
 
-  useEffect(() => {
-    if (upOrDown) {
-      setBodyHeight(bodyRef.current.scrollHeight);
-    } else {
-      setBodyHeight(0);
-    }
-  }, [upOrDown]);
-
-  useEffect(() => {
-    console.log(bodyHeight);
-  }, [bodyHeight]);
+  const handleDropDownClick = () => {
+    setUpOrDown((prevState) => !prevState);
+  };
 
   return (
     <div
       style={mergeStyles(
         styles.extraRounded,
         styles.pointer,
-        styles.respMarginBottom(20, 30)
+        styles.respMarginBottom(20, 30),
+        style
       )}
       className={`dropDown ${upOrDown ? "expanded" : ""}`}
-      onClick={() => setUpOrDown(!upOrDown)}
+      onClick={handleDropDownClick}
     >
       <div className="dropDownHead">
         <RespHeading level={3}>{dropDownHeadContent}</RespHeading>
@@ -35,8 +31,12 @@ export default function DropDown({ dropDownHeadContent, children }) {
       </div>
       <div
         className="dropDownBody"
-        style={{ height: bodyHeight + "px" }}
         ref={bodyRef}
+        style={{
+          height: upOrDown ? `${bodyRef.current.scrollHeight}px` : 0,
+          overflow: "hidden",
+          transition: "height 0.3s ease", // Adjust the duration and easing as needed
+        }}
       >
         {children}
       </div>

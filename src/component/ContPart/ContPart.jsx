@@ -1,7 +1,7 @@
 import Card from "./component/Card";
-import introLogo from "/public/introduction.svg";
-import instLogo from "/public/installation.svg";
-import usageLogo from "/public/arrow-up-solid.svg";
+import introLogo from "/introduction.svg";
+import instLogo from "/installation.svg";
+import usageLogo from "/arrow-up-solid.svg";
 import { NavLink } from "react-router-dom";
 
 export default function ContPart() {

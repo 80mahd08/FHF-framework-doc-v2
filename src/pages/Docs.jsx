@@ -32,8 +32,6 @@ export default function Docs({ showNav }) {
               Introduction
             </NavLink>
           </li>
-        </ul>
-        <ul className="unstyledList">
           <li>
             <NavLink
               className="mainLink"
@@ -48,8 +46,6 @@ export default function Docs({ showNav }) {
               Installation
             </NavLink>
           </li>
-        </ul>
-        <ul className="unstyledList">
           <li>
             <NavLink
               className="mainLink lastLink"

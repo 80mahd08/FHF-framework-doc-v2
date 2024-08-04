@@ -16,23 +16,29 @@ $tenthColor: #f1c5ea
 $eleventhColor: #bd59ae
 $twelveColor : #f5e3f5
 
+.container
+    width: 100%  
+    max-width: 1200px  
+    margin: 0 auto
+    padding: 20px  
+    
 *
     min-width: 0
 
 html
-    position: relative
     scroll-behavior: smooth
+    height: 100dvh
+
 body
-    position: absolute
-    top: 0
-    width: 100%
     font-family: 'Raleway', sans-serif
     overflow-x: hidden
+    height: 100%
+
 #root
-    width: 100dvw
     display: flex
     flex-direction: column
-    min-height: 100dvh
+    height: 100%
+    
 
 nav .mainLink 
     color: $mainColor
@@ -71,14 +77,26 @@ header
     width: 100%
     text-align: center
     color: #fff
-    height: 350px
+    min-height: 350px
     display: flex
     justify-content: center
-    flex-direction: column
     align-items: center
     background: $mainColor
-    overflow: hidden
     position: relative
+    img
+        position: absolute
+        height: 100%
+        width: 100%
+        object-fit: cover
+        z-index: -1
+        &.background 
+            bottom: 0
+            left: 0
+        &.foreground 
+            bottom: 0
+            left: 0
+        
+
     h1
         margin-top: 0
         font-size: 3rem
@@ -115,12 +133,13 @@ header
             bottom: 0
             transform: rotate(60deg)
 
+
 .ContPart
     width: 100%
-    top: calc( 60px + 350px )
     margin:
         top: 50px
         bottom: 50px
+    flex-grow: 1
     .container
         gap: 30px
 
@@ -291,7 +310,13 @@ nav
     margin: 0 auto
     max-width: 700px
     word-wrap: break-word
-    span
+    font-size: 1rem
+    pre
+        width: 100%
+        code
+            font-size: clamp(14px, 2vw, 16px)
+
+    & > span
         display: block
         width: 30px
         height: 30px
@@ -391,14 +416,13 @@ nav
         min-height: 100px
 
 footer
-    height: 40px
     display: flex
     justify-content: center
     align-items: center
-    flex: 1
     background-color: #925d8a
     color: #fff
     text-align: center
+    
 @media (max-width: 767px )
     .DocsContPart
         width: 100dvw !important

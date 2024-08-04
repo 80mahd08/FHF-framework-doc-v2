@@ -31,9 +31,11 @@ export default function Usage() {
           in your HTML file:
         </p>
 
-        <Code>{'<link rel="stylesheet" href="fhf/dist/main.min.css">'}</Code>
+        <Code long="xml">
+          {'<link rel="stylesheet" href="fhf/dist/main.min.css">'}
+        </Code>
         <p>or</p>
-        <Code>
+        <Code long="xml">
           {'<link rel="stylesheet" href="path/fhf/dist/main.min.css">'}
         </Code>
         <p>or</p>
@@ -119,7 +121,10 @@ export default function Usage() {
             />
           </div>
         </DropDown>
-        <DropDown dropDownHeadContent={"Text Color"} dropDownHeight={"15000px"}>
+        <DropDown
+          dropDownHeadContent={"Text Color Styles"}
+          dropDownHeight={"15000px"}
+        >
           <div>
             {/* Red */}
             <InnerDropDown
@@ -769,6 +774,16 @@ export default function Usage() {
                 // Add any additional information here
               ]}
             />
+          </div>
+        </DropDown>
+        <DropDown dropDownHeadContent={"Text effects"} dropDownHeight={"200px"}>
+          <div>
+            <p className="respP">.text-rainbow: Rainbow text effect.</p>
+            <p className="respP">.sparkle-effect: Sparkle effect.</p>
+            <p className="respP">.text-neon-glow: Neon glow text effect.</p>
+            <p className="respP">.text-glitchy: Glitchy text effect.</p>
+            <p className="respP">.text-neon: Neon text effect.</p>
+            <p className="respP">.text-wavy: Wavy text effect.</p>
           </div>
         </DropDown>
         <DropDown
@@ -1746,10 +1761,23 @@ export default function Usage() {
                 // Add any additional information here
               ]}
             />
+            <InnerDropDown
+              headerText={"Gradient Backgrounds"}
+              arrayOfClasses={[
+                ".gradient-primary: Primary gradient background.",
+                ".gradient-secondary: Secondary gradient background.",
+                ".gradient-accent: Accent gradient background.",
+                ".gradient-success: Success gradient background.",
+                ".gradient-error: Error gradient background.",
+                ".gradient-warning: Warning gradient background.",
+                ".gradient-info: Info gradient background.",
+                ".gradient-alert: Alert gradient background.",
+              ]}
+            />
           </div>
         </DropDown>
         <DropDown
-          dropDownHeadContent={"Border classes"}
+          dropDownHeadContent={"Border styles"}
           dropDownHeight={"500px"}
         >
           <div>
@@ -1758,26 +1786,808 @@ export default function Usage() {
               set to black by default , you can change it by using the classes
               below)
             </p>
-            {[
-              ".b-solid-_: Solid border with width _",
-              ".b-dashed-_: Dashed border with width _",
-              ".b-dotted-_: Dotted border with width _",
-              ".b-double-_: Double border with width _",
-              ".b-groove-_: Groove border with width _",
-              ".b-ridge-_: Ridge border with width _",
-              ".b-inset-_: Inset border with width _",
-              ".b-outset-_: Outset border with width _",
-              ".b-none: No border",
-              // Add any additional information here
-            ].map((item, index) => (
-              <p
-                style={styles.respMarginLeft(20, 30)}
-                key={index}
-                className="respP"
-              >
-                {item}
-              </p>
-            ))}
+            <InnerDropDown
+              headerText={"Border style"}
+              arrayOfClasses={[
+                ".b-solid-_: Solid border with width _",
+                ".b-dashed-_: Dashed border with width _",
+                ".b-dotted-_: Dotted border with width _",
+                ".b-double-_: Double border with width _",
+                ".b-groove-_: Groove border with width _",
+                ".b-ridge-_: Ridge border with width _",
+                ".b-inset-_: Inset border with width _",
+                ".b-outset-_: Outset border with width _",
+                ".b-none: No border",
+                // Add any additional information here
+              ]}
+            />
+            <InnerDropDown
+              headerText={"Border Effects"}
+              arrayOfClasses={[
+                ".border-fancy: Fancy border style.",
+                ".b-animated-gradient: Animated gradient border.",
+              ]}
+            />
+          </div>
+        </DropDown>
+        <DropDown
+          dropDownHeadContent={"Border color styles"}
+          dropDownHeight={"13500px"}
+        >
+          <div>
+            {/* Red */}
+            <InnerDropDown
+              headerText={"Red Border Color"}
+              arrayOfClasses={[
+                [
+                  `.b-red-100: Border color with a light shade, like`,
+                  "#FFEBEE",
+                ],
+                [
+                  `.b-red-200: Border color with a slightly darker shade, like`,
+                  "#FFCDD2",
+                ],
+                [`.b-red-300: Deeper red Border color, like`, "#EF9A9A"],
+                [`.b-red-400: Richer red Border color, like`, "#E57373"],
+                [`.b-red-500: Vibrant red Border color, like`, "#EF5350"],
+                [`.b-red-600: Intense red Border color, like`, "#E53935"],
+                [`.b-red-700: Bold red Border color, like`, "#D32F2F"],
+                [`.b-red-800: Deep red Border color, like`, "#C62828"],
+                [`.b-red-900: Dark red Border color, like`, "#B71C1C"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Blue */}
+            <InnerDropDown
+              headerText={"Blue Border Color"}
+              arrayOfClasses={[
+                [`.b-blue-100: Light blue Border color, like`, "#E3F2FD"],
+                [`.b-blue-200: Soft blue Border color, like`, "#BBDEFB"],
+                [`.b-blue-300: Gentle blue Border color, like`, "#90CAF9"],
+                [`.b-blue-400: Moderate blue Border color, like`, "#64B5F6"],
+                [`.b-blue-500: Strong blue Border color, like`, "#42A5F5"],
+                [`.b-blue-600: Vibrant blue Border color, like`, "#2196F3"],
+                [`.b-blue-700: Bold blue Border color, like`, "#1E88E5"],
+                [`.b-blue-800: Deep blue Border color, like`, "#1976D2"],
+                [`.b-blue-900: Dark blue Border color, like`, "#1565C0"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Green */}
+            <InnerDropDown
+              headerText={"Green Border Color"}
+              arrayOfClasses={[
+                [`.b-green-100: Light green Border color, like`, "#E8F5E9"],
+                [`.b-green-200: Soft green Border color, like`, "#C8E6C9"],
+                [`.b-green-300: Gentle green Border color, like`, "#A5D6A7"],
+                [`.b-green-400: Moderate green Border color, like`, "#81C784"],
+                [`.b-green-500: Strong green Border color, like`, "#66BB6A"],
+                [`.b-green-600: Vibrant green Border color, like`, "#4CAF50"],
+                [`.b-green-700: Bold green Border color, like`, "#43A047"],
+                [`.b-green-800: Deep green Border color, like`, "#388E3C"],
+                [`.b-green-900: Dark green Border color, like`, "#2E7D32"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Yellow */}
+            <InnerDropDown
+              headerText={"Yellow Border Color"}
+              arrayOfClasses={[
+                [`.b-yellow-100: Pale yellow Border color, like`, "#FFF9C4"],
+                [`.b-yellow-200: Light yellow Border color, like`, "#FFF59D"],
+                [`.b-yellow-300: Soft yellow Border color, like`, "#FFF176"],
+                [
+                  `.b-yellow-400: Moderate yellow Border color, like`,
+                  "#FFEE58",
+                ],
+                [`.b-yellow-500: Vibrant yellow Border color, like`, "#FFEB3B"],
+                [`.b-yellow-600: Intense yellow Border color, like`, "#FDD835"],
+                [`.b-yellow-700: Bold yellow Border color, like`, "#FBC02D"],
+                [`.b-yellow-800: Deep yellow Border color, like`, "#F9A825"],
+                [`.b-yellow-900: Dark yellow Border color, like`, "#F57F17"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Orange */}
+            <InnerDropDown
+              headerText={"Orange Border Color"}
+              arrayOfClasses={[
+                [`.b-orange-100: Light orange Border color, like`, "#FFE0B2"],
+                [`.b-orange-200: Soft orange Border color, like`, "#FFCC80"],
+                [`.b-orange-300: Gentle orange Border color, like`, "#FFB74D"],
+                [
+                  `.b-orange-400: Moderate orange Border color, like`,
+                  "#FFA726",
+                ],
+                [`.b-orange-500: Vibrant orange Border color, like`, "#FF9800"],
+                [`.b-orange-600: Intense orange Border color, like`, "#FB8C00"],
+                [`.b-orange-700: Bold orange Border color, like`, "#F57C00"],
+                [`.b-orange-800: Deep orange Border color, like`, "#EF6C00"],
+                [`.b-orange-900: Dark orange Border color, like`, "#E65100"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Purple */}
+            <InnerDropDown
+              headerText={"Purple Border Color"}
+              arrayOfClasses={[
+                [`.b-purple-100: Light purple Border color, like`, "#E1BEE7"],
+                [`.b-purple-200: Soft purple Border color, like`, "#CE93D8"],
+                [`.b-purple-300: Gentle purple Border color, like`, "#BA68C8"],
+                [
+                  `.b-purple-400: Moderate purple Border color, like`,
+                  "#AB47BC",
+                ],
+                [`.b-purple-500: Vibrant purple Border color, like`, "#9C27B0"],
+                [`.b-purple-600: Intense purple Border color, like`, "#8E24AA"],
+                [`.b-purple-700: Bold purple Border color, like`, "#7B1FA2"],
+                [`.b-purple-800: Deep purple Border color, like`, "#6A1B9A"],
+                [`.b-purple-900: Dark purple Border color, like`, "#4A148C"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Teal */}
+            <InnerDropDown
+              headerText={"Teal Border Color"}
+              arrayOfClasses={[
+                [`.b-teal-100: Light teal Border color, like`, "#B2DFDB"],
+                [`.b-teal-200: Soft teal Border color, like`, "#80CBC4"],
+                [`.b-teal-300: Gentle teal Border color, like`, "#4DB6AC"],
+                [`.b-teal-400: Moderate teal Border color, like`, "#26A69A"],
+                [`.b-teal-500: Vibrant teal Border color, like`, "#009688"],
+                [`.b-teal-600: Intense teal Border color, like`, "#00897B"],
+                [`.b-teal-700: Bold teal Border color, like`, "#00796B"],
+                [`.b-teal-800: Deep teal Border color, like`, "#00695C"],
+                [`.b-teal-900: Dark teal Border color, like`, "#004D40"],
+                // Add any additional information here
+              ]}
+            />
+            {/* Indigo */}
+            <InnerDropDown
+              headerText={"Indigo Border Color"}
+              arrayOfClasses={[
+                [`.b-indigo-100: Light indigo Border color, like`, "#C5CAE9"],
+                [`.b-indigo-200: Soft indigo Border color, like`, "#9FA8DA"],
+                [`.b-indigo-300: Gentle indigo Border color, like`, "#7986CB"],
+                [
+                  `.b-indigo-400: Moderate indigo Border color, like`,
+                  "#5C6BC0",
+                ],
+                [`.b-indigo-500: Vibrant indigo Border color, like`, "#3F51B5"],
+                [`.b-indigo-600: Intense indigo Border color, like`, "#3949AB"],
+                [`.b-indigo-700: Bold indigo Border color, like`, "#303F9F"],
+                [`.b-indigo-800: Deep indigo Border color, like`, "#283593"],
+                [`.b-indigo-900: Dark indigo Border color, like`, "#1A237E"],
+                // Add any additional information here
+              ]}
+            />
+            {/* Cyan */}
+            <InnerDropDown
+              headerText={"Cyan Border Color"}
+              arrayOfClasses={[
+                [`.b-cyan-100: Light cyan Border color, like`, "#B3E0F2"],
+                [`.b-cyan-200: Soft cyan Border color, like`, "#81D4FA"],
+                [`.b-cyan-300: Gentle cyan Border color, like`, "#4FC3F7"],
+                [`.b-cyan-400: Moderate cyan Border color, like`, "#29B6F6"],
+                [`.b-cyan-500: Vibrant cyan Border color, like`, "#03A9F4"],
+                [`.b-cyan-600: Intense cyan Border color, like`, "#039BE5"],
+                [`.b-cyan-700: Bold cyan Border color, like`, "#0288D1"],
+                [`.b-cyan-800: Deep cyan Border color, like`, "#0277BD"],
+                [`.b-cyan-900: Dark cyan Border color, like`, "#01579B"],
+                // Add any additional information here
+              ]}
+            />
+            {/* Brown */}
+            <InnerDropDown
+              headerText={"Brown Border Color"}
+              arrayOfClasses={[
+                [`.b-brown-100: Light brown Border color, like`, "#D7CCC8"],
+                [`.b-brown-200: Soft brown Border color, like`, "#BCAAA4"],
+                [`.b-brown-300: Gentle brown Border color, like`, "#A1887F"],
+                [`.b-brown-400: Moderate brown Border color, like`, "#8D6E63"],
+                [
+                  `.b-brown-500: Substantial brown Border color, like`,
+                  "#795548",
+                ],
+                [`.b-brown-600: Deep brown Border color, like`, "#6D4C41"],
+                [`.b-brown-700: Dark brown Border color, like`, "#5D4037"],
+                [`.b-brown-800: Rich brown Border color, like`, "#4E342E"],
+                [`.b-brown-900: Intense brown Border color, like`, "#3E2723"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Gray */}
+            <InnerDropDown
+              headerText={"Gray Border Color"}
+              arrayOfClasses={[
+                [`.b-gray-100: Light gray Border color, like`, "#F5F5F5"],
+                [`.b-gray-200: Soft gray Border color, like`, "#EEEEEE"],
+                [`.b-gray-300: Subtle gray Border color, like`, "#E0E0E0"],
+                [`.b-gray-400: Neutral gray Border color, like`, "#BDBDBD"],
+                [`.b-gray-500: Mid-tone gray Border color, like`, "#9E9E9E"],
+                [`.b-gray-600: Slate gray Border color, like`, "#757575"],
+                [`.b-gray-700: Charcoal gray Border color, like`, "#616161"],
+                [`.b-gray-800: Dark gray Border color, like`, "#424242"],
+                [`.b-gray-900: Deep gray Border color, like`, "#212121"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Deep Orange */}
+            <InnerDropDown
+              headerText={"Deep Orange Border Color"}
+              arrayOfClasses={[
+                [
+                  `.b-deep-orange-100: Light deep orange Border color, like`,
+                  "#FFCCBC",
+                ],
+                [
+                  `.b-deep-orange-200: Soft deep orange Border color, like`,
+                  "#FFAB91",
+                ],
+                [
+                  `.b-deep-orange-300: Gentle deep orange Border color, like`,
+                  "#FF8A65",
+                ],
+                [
+                  `.b-deep-orange-400: Moderate deep orange Border color, like`,
+                  "#FF7043",
+                ],
+                [
+                  `.b-deep-orange-500: Vibrant deep orange Border color, like`,
+                  "#FF5722",
+                ],
+                [
+                  `.b-deep-orange-600: Intense deep orange Border color, like`,
+                  "#F4511E",
+                ],
+                [
+                  `.b-deep-orange-700: Bold deep orange Border color, like`,
+                  "#E64A19",
+                ],
+                [
+                  `.b-deep-orange-800: Deep deep orange Border color, like`,
+                  "#D84315",
+                ],
+                [
+                  `.b-deep-orange-900: Dark deep orange Border color, like`,
+                  "#BF360C",
+                ],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Amber */}
+            <InnerDropDown
+              headerText={"Amber Border Color"}
+              arrayOfClasses={[
+                [`.b-amber-100: Light amber Border color, like`, "#FFECB3"],
+                [`.b-amber-200: Soft amber Border color, like`, "#FFE082"],
+                [`.b-amber-300: Gentle amber Border color, like`, "#FFD54F"],
+                [`.b-amber-400: Moderate amber Border color, like`, "#FFCA28"],
+                [`.b-amber-500: Vibrant amber Border color, like`, "#FFC107"],
+                [`.b-amber-600: Intense amber Border color, like`, "#FFB300"],
+                [`.b-amber-700: Bold amber Border color, like`, "#FFA000"],
+                [`.b-amber-800: Deep amber Border color, like`, "#FF8F00"],
+                [`.b-amber-900: Dark amber Border color, like`, "#FF6F00"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Blue Grey */}
+            <InnerDropDown
+              headerText={"Blue Grey Border Color"}
+              arrayOfClasses={[
+                [
+                  `.b-blue-grey-100: Light blue-grey Border color, like`,
+                  "#CFD8DC",
+                ],
+                [
+                  `.b-blue-grey-200: Soft blue-grey Border color, like`,
+                  "#B0BEC5",
+                ],
+                [
+                  `.b-blue-grey-300: Gentle blue-grey Border color, like`,
+                  "#90A4AE",
+                ],
+                [
+                  `.b-blue-grey-400: Moderate blue-grey Border color, like`,
+                  "#78909C",
+                ],
+                [
+                  `.b-blue-grey-500: Vibrant blue-grey Border color, like`,
+                  "#607D8B",
+                ],
+                [
+                  `.b-blue-grey-600: Intense blue-grey Border color, like`,
+                  "#546E7A",
+                ],
+                [
+                  `.b-blue-grey-700: Bold blue-grey Border color, like`,
+                  "#455A64",
+                ],
+                [
+                  `.b-blue-grey-800: Deep blue-grey Border color, like`,
+                  "#37474F",
+                ],
+                [
+                  `.b-blue-grey-900: Dark blue-grey Border color, like`,
+                  "#263238",
+                ],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Pink */}
+            <InnerDropDown
+              headerText={"Pink Border Color"}
+              arrayOfClasses={[
+                [`.b-pink-100: Light pink Border color, like`, "#F8BBD0"],
+                [`.b-pink-200: Soft pink Border color, like`, "#F48FB1"],
+                [`.b-pink-300: Gentle pink Border color, like`, "#F06292"],
+                [`.b-pink-400: Moderate pink Border color, like`, "#EC407A"],
+                [`.b-pink-500: Vibrant pink Border color, like`, "#E91E63"],
+                [`.b-pink-600: Intense pink Border color, like`, "#D81B60"],
+                [`.b-pink-700: Bold pink Border color, like`, "#C2185B"],
+                [`.b-pink-800: Deep pink Border color, like`, "#AD1457"],
+                [`.b-pink-900: Dark pink Border color, like`, "#880E4F"],
+                // Add any additional information here
+              ]}
+            />
+            {/* Ray */}
+            <InnerDropDown
+              headerText={"Ray Border Color"}
+              arrayOfClasses={[
+                [`.b-ray-100: Light ray Border color, like`, "#C5CAE9"],
+                [`.b-ray-200: Soft ray Border color, like`, "#9FA8DA"],
+                [`.b-ray-300: Gentle ray Border color, like`, "#7986CB"],
+                [`.b-ray-400: Moderate ray Border color, like`, "#5C6BC0"],
+                [`.b-ray-500: Vibrant ray Border color, like`, "#3F51B5"],
+                [`.b-ray-600: Intense ray Border color, like`, "#3949AB"],
+                [`.b-ray-700: Bold ray Border color, like`, "#303F9F"],
+                [`.b-ray-800: Deep ray Border color, like`, "#283593"],
+                [`.b-ray-900: Dark ray Border color, like`, "#1A237E"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Lime */}
+            <InnerDropDown
+              headerText={"Lime Border Color"}
+              arrayOfClasses={[
+                [`.b-lime-100: Light lime Border color, like`, "#F0F4C3"],
+                [`.b-lime-200: Soft lime Border color, like`, "#E6EE9C"],
+                [`.b-lime-300: Gentle lime Border color, like`, "#DCE775"],
+                [`.b-lime-400: Moderate lime Border color, like`, "#D4E157"],
+                [`.b-lime-500: Vibrant lime Border color, like`, "#CDDC39"],
+                [`.b-lime-600: Intense lime Border color, like`, "#C0CA33"],
+                [`.b-lime-700: Bold lime Border color, like`, "#AFB42B"],
+                [`.b-lime-800: Deep lime Border color, like`, "#9E9D24"],
+                [`.b-lime-900: Dark lime Border color, like`, "#827717"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Gold */}
+            <InnerDropDown
+              headerText={"Gold Border Color"}
+              arrayOfClasses={[
+                [`.b-gold-100: Light gold Border color, like`, "#FFF8E1"],
+                [`.b-gold-200: Soft gold Border color, like`, "#FFECB3"],
+                [`.b-gold-300: Gentle gold Border color, like`, "#FFE082"],
+                [`.b-gold-400: Moderate gold Border color, like`, "#FFD54F"],
+                [`.b-gold-500: Vibrant gold Border color, like`, "#FFCA28"],
+                [`.b-gold-600: Intense gold Border color, like`, "#FFC107"],
+                [`.b-gold-700: Bold gold Border color, like`, "#FFB300"],
+                [`.b-gold-800: Deep gold Border color, like`, "#FFA000"],
+                [`.b-gold-900: Dark gold Border color, like`, "#FF8F00"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Silver */}
+            <InnerDropDown
+              headerText={"Silver Border Color"}
+              arrayOfClasses={[
+                [`.b-silver-100: Light silver Border color, like`, "#F5F5F5"],
+                [`.b-silver-200: Soft silver Border color, like`, "#EEEEEE"],
+                [`.b-silver-300: Subtle silver Border color, like`, "#E0E0E0"],
+                [`.b-silver-400: Neutral silver Border color, like`, "#BDBDBD"],
+                [
+                  `.b-silver-500: Mid-tone silver Border color, like`,
+                  "#9E9E9E",
+                ],
+                [`.b-silver-600: Slate silver Border color, like`, "#757575"],
+                [
+                  `.b-silver-700: Charcoal silver Border color, like`,
+                  "#616161",
+                ],
+                [`.b-silver-800: Dark silver Border color, like`, "#424242"],
+                [`.b-silver-900: Deep silver Border color, like`, "#212121"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Emerald */}
+            <InnerDropDown
+              headerText={"Emerald Border Color"}
+              arrayOfClasses={[
+                [`.b-emerald-100: Light emerald Border color, like`, "#D0F8CE"],
+                [`.b-emerald-200: Soft emerald Border color, like`, "#A3E9A4"],
+                [
+                  `.b-emerald-300: Gentle emerald Border color, like`,
+                  "#72D572",
+                ],
+                [
+                  `.b-emerald-400: Moderate emerald Border color, like`,
+                  "#42BD41",
+                ],
+                [
+                  `.b-emerald-500: Vibrant emerald Border color, like`,
+                  "#2E7D32",
+                ],
+                [
+                  `.b-emerald-600: Intense emerald Border color, like`,
+                  "#259B24",
+                ],
+                [`.b-emerald-700: Bold emerald Border color, like`, "#0A8F08"],
+                [`.b-emerald-800: Deep emerald Border color, like`, "#0A7E07"],
+                [`.b-emerald-900: Dark emerald Border color, like`, "#056F00"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Coral */}
+            <InnerDropDown
+              headerText={"Coral Border Color"}
+              arrayOfClasses={[
+                [`.b-coral-100: Light coral Border color, like`, "#FFD180"],
+                [`.b-coral-200: Soft coral Border color, like`, "#FFAB40"],
+                [`.b-coral-300: Gentle coral Border color, like`, "#FF9100"],
+                [`.b-coral-400: Moderate coral Border color, like`, "#FF6D00"],
+                [`.b-coral-500: Vibrant coral Border color, like`, "#FF5722"],
+                [`.b-coral-600: Intense coral Border color, like`, "#F4511E"],
+                [`.b-coral-700: Bold coral Border color, like`, "#E64A19"],
+                [`.b-coral-800: Deep coral Border color, like`, "#D84315"],
+                [`.b-coral-900: Dark coral Border color, like`, "#BF360C"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Ruby */}
+            <InnerDropDown
+              headerText={"Ruby Border Color"}
+              arrayOfClasses={[
+                [`.b-ruby-100: Light ruby Border color, like`, "#FFCDD2"],
+                [`.b-ruby-200: Soft ruby Border color, like`, "#EF9A9A"],
+                [`.b-ruby-300: Gentle ruby Border color, like`, "#E57373"],
+                [`.b-ruby-400: Moderate ruby Border color, like`, "#EF5350"],
+                [`.b-ruby-500: Vibrant ruby Border color, like`, "#E53935"],
+                [`.b-ruby-600: Intense ruby Border color, like`, "#D32F2F"],
+                [`.b-ruby-700: Bold ruby Border color, like`, "#C62828"],
+                [`.b-ruby-800: Deep ruby Border color, like`, "#B71C1C"],
+                [`.b-ruby-900: Dark ruby Border color, like`, "#FF8A80"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Sky */}
+            <InnerDropDown
+              headerText={"Sky Border Color"}
+              arrayOfClasses={[
+                [`.b-sky-100: Light sky Border color, like`, "#90CAF9"],
+                [`.b-sky-200: Soft sky Border color, like`, "#64B5F6"],
+                [`.b-sky-300: Gentle sky Border color, like`, "#42A5F5"],
+                [`.b-sky-400: Moderate sky Border color, like`, "#2196F3"],
+                [`.b-sky-500: Vibrant sky Border color, like`, "#1E88E5"],
+                [`.b-sky-600: Intense sky Border color, like`, "#1976D2"],
+                [`.b-sky-700: Bold sky Border color, like`, "#1565C0"],
+                [`.b-sky-800: Deep sky Border color, like`, "#0D47A1"],
+                [`.b-sky-900: Dark sky Border color, like`, "#82B1FF"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Mint */}
+            <InnerDropDown
+              headerText={"Mint Border Color"}
+              arrayOfClasses={[
+                [`.b-mint-100: Light mint Border color, like`, "#C8E6C9"],
+                [`.b-mint-200: Soft mint Border color, like`, "#A5D6A7"],
+                [`.b-mint-300: Gentle mint Border color, like`, "#81C784"],
+                [`.b-mint-400: Moderate mint Border color, like`, "#66BB6A"],
+                [`.b-mint-500: Vibrant mint Border color, like`, "#4CAF50"],
+                [`.b-mint-600: Intense mint Border color, like`, "#43A047"],
+                [`.b-mint-700: Bold mint Border color, like`, "#388E3C"],
+                [`.b-mint-800: Deep mint Border color, like`, "#2E7D32"],
+                [`.b-mint-900: Dark mint Border color, like`, "#69F0AE"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Sunflower */}
+            <InnerDropDown
+              headerText={"Sunflower Border Color"}
+              arrayOfClasses={[
+                [
+                  `.b-sunflower-100: Light sunflower Border color, like`,
+                  "#FFF59D",
+                ],
+                [
+                  `.b-sunflower-200: Soft sunflower Border color, like`,
+                  "#FFF176",
+                ],
+                [
+                  `.b-sunflower-300: Gentle sunflower Border color, like`,
+                  "#FFEE58",
+                ],
+                [
+                  `.b-sunflower-400: Moderate sunflower Border color, like`,
+                  "#FFEB3B",
+                ],
+                [
+                  `.b-sunflower-500: Vibrant sunflower Border color, like`,
+                  "#FDD835",
+                ],
+                [
+                  `.b-sunflower-600: Intense sunflower Border color, like`,
+                  "#FBC02D",
+                ],
+                [
+                  `.b-sunflower-700: Bold sunflower Border color, like`,
+                  "#F9A825",
+                ],
+                [
+                  `.b-sunflower-800: Deep sunflower Border color, like`,
+                  "#F57F17",
+                ],
+                [
+                  `.b-sunflower-900: Dark sunflower Border color, like`,
+                  "#FFD600",
+                ],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Peach */}
+            <InnerDropDown
+              headerText={"Peach Border Color"}
+              arrayOfClasses={[
+                [`.b-peach-100: Light peach Border color, like`, "#FFCC80"],
+                [`.b-peach-200: Soft peach Border color, like`, "#FFB74D"],
+                [`.b-peach-300: Gentle peach Border color, like`, "#FFA726"],
+                [`.b-peach-400: Moderate peach Border color, like`, "#FF9800"],
+                [`.b-peach-500: Vibrant peach Border color, like`, "#FB8C00"],
+                [`.b-peach-600: Intense peach Border color, like`, "#F57C00"],
+                [`.b-peach-700: Bold peach Border color, like`, "#EF6C00"],
+                [`.b-peach-800: Deep peach Border color, like`, "#E65100"],
+                [`.b-peach-900: Dark peach Border color, like`, "#FFAB91"],
+                // Add any additional information here
+              ]}
+            />
+            {/* Orchid */}
+            <InnerDropDown
+              headerText={"Orchid Border Color"}
+              arrayOfClasses={[
+                [`.b-orchid-100: Light orchid Border color, like`, "#CE93D8"],
+                [`.b-orchid-200: Soft orchid Border color, like`, "#BA68C8"],
+                [`.b-orchid-300: Gentle orchid Border color, like`, "#AB47BC"],
+                [
+                  `.b-orchid-400: Moderate orchid Border color, like`,
+                  "#9C27B0",
+                ],
+                [`.b-orchid-500: Vibrant orchid Border color, like`, "#8E24AA"],
+                [`.b-orchid-600: Intense orchid Border color, like`, "#7B1FA2"],
+                [`.b-orchid-700: Bold orchid Border color, like`, "#6A1B9A"],
+                [`.b-orchid-800: Deep orchid Border color, like`, "#4A148C"],
+                [`.b-orchid-900: Dark orchid Border color, like`, "#9C27B0"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Ocean */}
+            <InnerDropDown
+              headerText={"Ocean Border Color"}
+              arrayOfClasses={[
+                [`.b-ocean-100: Light ocean Border color, like`, "#80DEEA"],
+                [`.b-ocean-200: Soft ocean Border color, like`, "#4DD0E1"],
+                [`.b-ocean-300: Gentle ocean Border color, like`, "#26C6DA"],
+                [`.b-ocean-400: Moderate ocean Border color, like`, "#00BCD4"],
+                [`.b-ocean-500: Vibrant ocean Border color, like`, "#00ACC1"],
+                [`.b-ocean-600: Intense ocean Border color, like`, "#0097A7"],
+                [`.b-ocean-700: Bold ocean Border color, like`, "#00838F"],
+                [`.b-ocean-800: Deep ocean Border color, like`, "#006064"],
+                [`.b-ocean-900: Dark ocean Border color, like`, "#00BCD4"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Coffee */}
+            <InnerDropDown
+              headerText={"Coffee Border Color"}
+              arrayOfClasses={[
+                [`.b-coffee-100: Light coffee Border color, like`, "#BCAAA4"],
+                [`.b-coffee-200: Soft coffee Border color, like`, "#A1887F"],
+                [`.b-coffee-300: Gentle coffee Border color, like`, "#8D6E63"],
+                [
+                  `.b-coffee-400: Moderate coffee Border color, like`,
+                  "#795548",
+                ],
+                [`.b-coffee-500: Vibrant coffee Border color, like`, "#6D4C41"],
+                [`.b-coffee-600: Intense coffee Border color, like`, "#5D4037"],
+                [`.b-coffee-700: Bold coffee Border color, like`, "#4E342E"],
+                [`.b-coffee-800: Deep coffee Border color, like`, "#3E2723"],
+                [`.b-coffee-900: Dark coffee Border color, like`, "#795548"],
+                // Add any additional information here
+              ]}
+            />
+
+            {/* Transparent */}
+            <InnerDropDown
+              headerText={"Transparent Border Color"}
+              arrayOfClasses={[
+                [`.b-trans: Transparent background color, like`, "transparent"],
+                // Add any additional information here
+              ]}
+            />
+          </div>
+        </DropDown>
+        <DropDown
+          dropDownHeadContent={"Container Styles"}
+          dropDownHeight={"200px"}
+        >
+          <div>
+            <p className="respP">
+              .container: Centers the element horizontally and add
+              responsiveness to it and adds padding
+            </p>
+            <p className="respP">
+              .flex-container: Displays elements in a flex layout with wrapping,
+            </p>
+            <p className="respPaddingLeft-20-30 respP">
+              .flex-item: Sets flex properties for child items
+            </p>
+          </div>
+        </DropDown>
+        <DropDown dropDownHeadContent={"Grid Styles"} dropDownHeight={"300px"}>
+          <div>
+            <p className="respP">
+              _ in class names means that you should set a number between 100
+              and 500 to define the grid width.
+            </p>
+            <p
+              style={mergeStyles(styles.respMarginLeft(20, 30))}
+              className="respP"
+            >
+              .respGridFill-_: Creates a grid with auto-fill columns.
+            </p>
+            <p
+              style={mergeStyles(styles.respMarginLeft(20, 30))}
+              className="respP"
+            >
+              .respGridFit-_: Creates a grid with auto-fit columns.
+            </p>
+          </div>
+        </DropDown>
+        <DropDown
+          dropDownHeadContent={"Float and Clear Styles"}
+          dropDownHeight={"200px"}
+        >
+          <div>
+            <p className="respP">.float-left: Floats an element to the left</p>
+            <p className="respP">
+              .float-right: Floats an element to the right
+            </p>
+            <p className="respP">
+              .clear-fix: Ensures proper clearing of floats within a container.
+            </p>
+          </div>
+        </DropDown>
+        <DropDown
+          dropDownHeadContent={"Visibility Styles"}
+          dropDownHeight={"300px"}
+        >
+          <div>
+            <InnerDropDown
+              headerText={"Visible Classes"}
+              arrayOfClasses={[
+                ".visible-xs: Makes the element visible on extra small screens (Below 768px).",
+                ".visible-sm: Makes the element visible on small screens (768px - 991px).",
+                ".visible-md: Makes the element visible on medium screens (992px - 1199px).",
+                ".visible-lg: Makes the element visible on large screens (1200px and above).",
+              ]}
+            />
+            <InnerDropDown
+              headerText={"Hidden Classes"}
+              arrayOfClasses={[
+                ".hidden-xs: Hides the element on extra small screens (Below 768px).",
+                ".hidden-sm: Hides the element on small screens (768px - 991px).",
+                ".hidden-md: Hides the element on medium screens (992px - 1199px).",
+                ".hidden-lg: Hides the element on large screens (1200px and above).",
+              ]}
+            />
+          </div>
+        </DropDown>
+        <DropDown
+          dropDownHeadContent={"Width and Height Styles"}
+          dropDownHeight={"400px"}
+        >
+          <div>
+            <p className="respP">
+              _ in class names means that you should set a number between 1 and
+              100 (inclusive) for percentage units and between 1 and 1000 for
+              pixel units.
+            </p>
+            <p
+              className="respP"
+              style={mergeStyles(styles.respMarginLeft(20, 30))}
+            >
+              .w-_: Sets the width to the specified percentage value.
+            </p>
+            <p
+              className="respP"
+              style={mergeStyles(styles.respMarginLeft(20, 30))}
+            >
+              .h-_: Sets the height to the specified percentage value.
+            </p>
+            <p
+              className="respP"
+              style={mergeStyles(styles.respMarginLeft(20, 30))}
+            >
+              .w-_px: Sets the width to the specified pixel value.
+            </p>
+            <p
+              className="respP"
+              style={mergeStyles(styles.respMarginLeft(20, 30))}
+            >
+              .h-_px: Sets the height to the specified pixel value.
+            </p>
+          </div>
+        </DropDown>
+        <DropDown
+          dropDownHeadContent={"Button Styles"}
+          dropDownHeight={"500px"}
+        >
+          <div>
+            <p className="respP">.btn-success: Success button style.</p>
+            <p className="respP">.btn-error: Error button style.</p>
+            <p className="respP">.btn-warning: Warning button style.</p>
+            <p className="respP">.btn-info: Info button style."</p>
+          </div>
+        </DropDown>
+        <DropDown
+          dropDownHeadContent={"Border Radius Styles"}
+          dropDownHeight={"500px"}
+        >
+          <div>
+            <p>.rounded: Regular rounded border radius.</p>
+            <p>.extraRounded: Extra rounded border radius.</p>
+            <p>.megaRounded: Mega rounded border radius.</p>
+            <p>.superRounded: Super rounded border radius.</p>
+            <p>.ultraRounded: Ultra rounded border radius.</p>
+            <p>.extremeRounded: Extreme rounded border radius.</p>
+            <p>.redicalRounded: Radical rounded border radius.</p>
+            <p>.hyperRounded: Hyper rounded border radius.</p>
+            <p>.ultimateRounded: Ultimate rounded border radius.</p>
+            <p>.maxRounded: Maximum rounded border radius.</p>
+            <p>.beyondRounded: Beyond rounded border radius.</p>
+          </div>
+        </DropDown>
+
+        <DropDown
+          dropDownHeadContent={"Image Effects"}
+          dropDownHeight={"500px"}
+        >
+          <div>
+            <p>.gs-image: Grayscale image effect.</p>
+            <p>.blur-image: Blur image effect.</p>
           </div>
         </DropDown>
       </div>
