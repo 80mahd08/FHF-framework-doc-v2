@@ -138,8 +138,8 @@ export default function Usage() {
 				</DropDown>
 				<DropDown dropDownHeadContent={"colors"} dropDownHeight={"500px"}>
 					<p>
-						_ mean one of those "text" for color, "b" for border color, "bg" for
-						background color
+						_ mean that you should Use 'text' for text color, 'b' for border
+						color, and 'bg' for background color.
 					</p>
 					<div>
 						{Object.keys(colors.colors).map((oneKey, i) => {
