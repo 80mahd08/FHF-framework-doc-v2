@@ -55,18 +55,17 @@ export default {
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/styles"
-              ],
-              "postcssOptions": {
-                "config": "./postcss.config.js"
-              }
+              ]
+            },
+            "postcssOptions": {
+              "config": "./postcss.config.js"
             }
           }
         }
       }
     }
   }
-}
-`}</Code>
+}`}</Code>
 			<RespHeading level={3}>3 - Configure PostCSS:</RespHeading>
 			<RespP>Create a postcss.config.js file:</RespP>
 			<Code>
@@ -154,13 +153,11 @@ module.exports = {
   webpack: (config) => {
     config.module.rules.push({
       test: /\.css$/,
-      use: ['style-loader', 'css-loader', 'postcss-loader'],
+      use: ['css-loader', 'postcss-loader'],
     });
-
     return config;
   },
-};
-`}
+};`}
 			</Code>
 			<RespHeading level={3}>4 - Run your build command:</RespHeading>
 			<RespP>

@@ -3,7 +3,9 @@ import Code from "./component/Code";
 import { color, motion } from "framer-motion";
 import DropDown from "./usageComponents/DropDown";
 import colors from "./colors.json";
-import InnerDropDown from "./usageComponents/InnerDropDown";
+import InnerDropDown, {
+	dropDownHeaderInsideOFBodyStyles,
+} from "./usageComponents/InnerDropDown";
 export default function Usage() {
 	document.title = "FHF - Usage";
 
@@ -155,36 +157,8 @@ export default function Usage() {
 						})}
 					</div>
 				</DropDown>
-				<DropDown
-					dropDownHeadContent={"Border styles"}
-					dropDownHeight={"500px"}>
-					<div>
-						<p className="respP">
-							_ mean that you should set number between 0 and 10 (border color
-							set to black by default , you can change it by using the classes
-							below)
-						</p>
-						<InnerDropDown
-							headerText={"Border style"}
-							arrayOfClasses={[
-								".b-solid-_: Solid border with width _",
-								".b-dashed-_: Dashed border with width _",
-								".b-dotted-_: Dotted border with width _",
-								".b-double-_: Double border with width _",
-								".b-groove-_: Groove border with width _",
-								".b-ridge-_: Ridge border with width _",
-								".b-inset-_: Inset border with width _",
-								".b-outset-_: Outset border with width _",
-								".b-none: No border",
-								// Add any additional information here
-							]}
-						/>
-					</div>
-				</DropDown>
 
-				<DropDown
-					dropDownHeadContent={"layout Styles"}
-					dropDownHeight={"200px"}>
+				<DropDown dropDownHeadContent={"layout"} dropDownHeight={"200px"}>
 					<div>
 						<p className="respP">
 							.container: Centers the element horizontally and add
@@ -211,13 +185,15 @@ export default function Usage() {
 								".clear-fix: Ensures proper clearing of floats within a container.",
 							]}
 						/>
-					</div>
-				</DropDown>
-
-				<DropDown
-					dropDownHeadContent={"Visibility Styles"}
-					dropDownHeight={"300px"}>
-					<div>
+						<InnerDropDown
+							headerText={"Positioning Utilities"}
+							arrayOfClasses={[
+								".position-relative: Sets position to relative.",
+								".position-absolute: Sets position to absolute.",
+								".position-fixed: Sets position to fixed.",
+								".position-sticky: Sets position to sticky.",
+							]}
+						/>
 						<InnerDropDown
 							headerText={"Visible Classes"}
 							arrayOfClasses={[
@@ -236,73 +212,90 @@ export default function Usage() {
 								".hidden-lg: Hides the element on large screens (1200px and above).",
 							]}
 						/>
-						<InnerDropDown
-							headerText={"Positioning Utilities"}
-							arrayOfClasses={[
-								".position-relative: Sets position to relative.",
-								".position-absolute: Sets position to absolute.",
-								".position-fixed: Sets position to fixed.",
-								".position-sticky: Sets position to sticky.",
-							]}
-						/>
+						<RespHeading level={4} style={dropDownHeaderInsideOFBodyStyles}>
+							Width and Height Styles
+						</RespHeading>
+						<div className="respPaddingLeft-20-30">
+							<p className="respP">
+								_ in class names means that you should set a number between 1
+								and 100 (inclusive) for percentage units and between 1 and 1000
+								for pixel units.
+							</p>
+							<p
+								className="respP"
+								style={mergeStyles(styles.respMarginLeft(20, 30))}>
+								.w-_: Sets the width to the specified percentage value.
+							</p>
+							<p
+								className="respP"
+								style={mergeStyles(styles.respMarginLeft(20, 30))}>
+								.h-_: Sets the height to the specified percentage value.
+							</p>
+							<p
+								className="respP"
+								style={mergeStyles(styles.respMarginLeft(20, 30))}>
+								.w-_px: Sets the width to the specified pixel value.
+							</p>
+							<p
+								className="respP"
+								style={mergeStyles(styles.respMarginLeft(20, 30))}>
+								.h-_px: Sets the height to the specified pixel value.
+							</p>
+						</div>
 					</div>
 				</DropDown>
-				<DropDown
-					dropDownHeadContent={"Width and Height Styles"}
-					dropDownHeight={"400px"}>
+				<DropDown dropDownHeadContent={"Border"} dropDownHeight={"500px"}>
+					<InnerDropDown
+						headerText={"Border style"}
+						arrayOfClasses={[
+							".b-solid-_: Solid border with width _ (_ mean that you should set number between 0 and 10 (border color set to black by default , you can change it by using the classes below))",
+							".b-dashed-_: Dashed border with width _ (_ mean that you should set number between 0 and 10 (border color set to black by default , you can change it by using the classes below))",
+							".b-dotted-_: Dotted border with width _ (_ mean that you should set number between 0 and 10 (border color set to black by default , you can change it by using the classes below))",
+							".b-double-_: Double border with width _ (_ mean that you should set number between 0 and 10 (border color set to black by default , you can change it by using the classes below))",
+							".b-groove-_: Groove border with width _ (_ mean that you should set number between 0 and 10 (border color set to black by default , you can change it by using the classes below))",
+							".b-ridge-_: Ridge border with width _ (_ mean that you should set number between 0 and 10 (border color set to black by default , you can change it by using the classes below))",
+							".b-inset-_: Inset border with width _ (_ mean that you should set number between 0 and 10 (border color set to black by default , you can change it by using the classes below))",
+							".b-outset-_: Outset border with width _ (_ mean that you should set number between 0 and 10 (border color set to black by default , you can change it by using the classes below))",
+							".b-none: No border",
+						]}
+					/>
+					<RespHeading level={4} style={dropDownHeaderInsideOFBodyStyles}>
+						border radius
+					</RespHeading>
 					<div>
-						<p className="respP">
-							_ in class names means that you should set a number between 1 and
-							100 (inclusive) for percentage units and between 1 and 1000 for
-							pixel units.
+						<p style={styles.respMarginLeft(20, 30)}>
+							.rounded: Regular rounded border radius.
 						</p>
-						<p
-							className="respP"
-							style={mergeStyles(styles.respMarginLeft(20, 30))}>
-							.w-_: Sets the width to the specified percentage value.
+						<p style={styles.respMarginLeft(20, 30)}>
+							.extraRounded: Extra rounded border radius.
 						</p>
-						<p
-							className="respP"
-							style={mergeStyles(styles.respMarginLeft(20, 30))}>
-							.h-_: Sets the height to the specified percentage value.
+						<p style={styles.respMarginLeft(20, 30)}>
+							.megaRounded: Mega rounded border radius.
 						</p>
-						<p
-							className="respP"
-							style={mergeStyles(styles.respMarginLeft(20, 30))}>
-							.w-_px: Sets the width to the specified pixel value.
+						<p style={styles.respMarginLeft(20, 30)}>
+							.superRounded: Super rounded border radius.
 						</p>
-						<p
-							className="respP"
-							style={mergeStyles(styles.respMarginLeft(20, 30))}>
-							.h-_px: Sets the height to the specified pixel value.
+						<p style={styles.respMarginLeft(20, 30)}>
+							.ultraRounded: Ultra rounded border radius.
 						</p>
-					</div>
-				</DropDown>
-
-				<DropDown
-					dropDownHeadContent={"Border Radius Styles"}
-					dropDownHeight={"500px"}>
-					<div>
-						<p>.rounded: Regular rounded border radius.</p>
-						<p>.extraRounded: Extra rounded border radius.</p>
-						<p>.megaRounded: Mega rounded border radius.</p>
-						<p>.superRounded: Super rounded border radius.</p>
-						<p>.ultraRounded: Ultra rounded border radius.</p>
-						<p>.extremeRounded: Extreme rounded border radius.</p>
-						<p>.redicalRounded: Radical rounded border radius.</p>
-						<p>.hyperRounded: Hyper rounded border radius.</p>
-						<p>.ultimateRounded: Ultimate rounded border radius.</p>
-						<p>.maxRounded: Maximum rounded border radius.</p>
-						<p>.beyondRounded: Beyond rounded border radius.</p>
-					</div>
-				</DropDown>
-
-				<DropDown
-					dropDownHeadContent={"Image Effects"}
-					dropDownHeight={"500px"}>
-					<div>
-						<p>.gs-image: Grayscale image effect.</p>
-						<p>.blur-image: Blur image effect.</p>
+						<p style={styles.respMarginLeft(20, 30)}>
+							.extremeRounded: Extreme rounded border radius.
+						</p>
+						<p style={styles.respMarginLeft(20, 30)}>
+							.redicalRounded: Radical rounded border radius.
+						</p>
+						<p style={styles.respMarginLeft(20, 30)}>
+							.hyperRounded: Hyper rounded border radius.
+						</p>
+						<p style={styles.respMarginLeft(20, 30)}>
+							.ultimateRounded: Ultimate rounded border radius.
+						</p>
+						<p style={styles.respMarginLeft(20, 30)}>
+							.maxRounded: Maximum rounded border radius.
+						</p>
+						<p style={styles.respMarginLeft(20, 30)}>
+							.beyondRounded: Beyond rounded border radius.
+						</p>
 					</div>
 				</DropDown>
 			</div>
