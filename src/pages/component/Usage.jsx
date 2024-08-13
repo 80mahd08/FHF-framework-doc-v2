@@ -5,15 +5,8 @@ import DropDown from "./usageComponents/DropDown";
 import colors from "./colors.json";
 import InnerDropDown from "./usageComponents/InnerDropDown";
 export default function Usage() {
-	console.log(colors.colors);
-
 	document.title = "FHF - Usage";
-	const dropDownHeaderInsideOFBodyStyles = mergeStyles(
-		styles.fontColor("rgb(88, 62, 85)")
-	);
-	const dropDownBodyInsideOFBodyStyles = mergeStyles(
-		styles.respMarginLeft(20, 30)
-	);
+
 	return (
 		<motion.div
 			className="usage DocsContPart padding-35"
@@ -190,7 +183,7 @@ export default function Usage() {
 				</DropDown>
 
 				<DropDown
-					dropDownHeadContent={"Container Styles"}
+					dropDownHeadContent={"layout Styles"}
 					dropDownHeight={"200px"}>
 					<div>
 						<p className="respP">
@@ -203,39 +196,24 @@ export default function Usage() {
 						<p className="respPaddingLeft-20-30 respP">
 							.flex-item: Sets flex properties for child items
 						</p>
+						<InnerDropDown
+							headerText={"grid styles"}
+							arrayOfClasses={[
+								".respGridFit-_: Creates a grid with auto-fit columns.(_ in class names means that you should set a number between 100 and 500 to define the grid width.)",
+								".respGridFit-_: Creates a grid with auto-fit columns.(_ in class names means that you should set a number between 100 and 500 to define the grid width.)",
+							]}
+						/>
+						<InnerDropDown
+							headerText={"float styles"}
+							arrayOfClasses={[
+								".float-left: Floats an element to the left",
+								".float-right: Floats an element to the right",
+								".clear-fix: Ensures proper clearing of floats within a container.",
+							]}
+						/>
 					</div>
 				</DropDown>
-				<DropDown dropDownHeadContent={"Grid Styles"} dropDownHeight={"300px"}>
-					<div>
-						<p className="respP">
-							_ in class names means that you should set a number between 100
-							and 500 to define the grid width.
-						</p>
-						<p
-							style={mergeStyles(styles.respMarginLeft(20, 30))}
-							className="respP">
-							.respGridFill-_: Creates a grid with auto-fill columns.
-						</p>
-						<p
-							style={mergeStyles(styles.respMarginLeft(20, 30))}
-							className="respP">
-							.respGridFit-_: Creates a grid with auto-fit columns.
-						</p>
-					</div>
-				</DropDown>
-				<DropDown
-					dropDownHeadContent={"Float and Clear Styles"}
-					dropDownHeight={"200px"}>
-					<div>
-						<p className="respP">.float-left: Floats an element to the left</p>
-						<p className="respP">
-							.float-right: Floats an element to the right
-						</p>
-						<p className="respP">
-							.clear-fix: Ensures proper clearing of floats within a container.
-						</p>
-					</div>
-				</DropDown>
+
 				<DropDown
 					dropDownHeadContent={"Visibility Styles"}
 					dropDownHeight={"300px"}>
@@ -256,6 +234,15 @@ export default function Usage() {
 								".hidden-sm: Hides the element on small screens (768px - 991px).",
 								".hidden-md: Hides the element on medium screens (992px - 1199px).",
 								".hidden-lg: Hides the element on large screens (1200px and above).",
+							]}
+						/>
+						<InnerDropDown
+							headerText={"Positioning Utilities"}
+							arrayOfClasses={[
+								".position-relative: Sets position to relative.",
+								".position-absolute: Sets position to absolute.",
+								".position-fixed: Sets position to fixed.",
+								".position-sticky: Sets position to sticky.",
 							]}
 						/>
 					</div>
@@ -291,16 +278,7 @@ export default function Usage() {
 						</p>
 					</div>
 				</DropDown>
-				<DropDown
-					dropDownHeadContent={"Button Styles"}
-					dropDownHeight={"500px"}>
-					<div>
-						<p className="respP">.btn-success: Success button style.</p>
-						<p className="respP">.btn-error: Error button style.</p>
-						<p className="respP">.btn-warning: Warning button style.</p>
-						<p className="respP">.btn-info: Info button style."</p>
-					</div>
-				</DropDown>
+
 				<DropDown
 					dropDownHeadContent={"Border Radius Styles"}
 					dropDownHeight={"500px"}>
