@@ -42,6 +42,90 @@ export default function Usage() {
 					Once you have included the stylesheet, you can start using the
 					pre-designed CSS classes in your HTML elements.
 				</p>
+
+				<DropDown dropDownHeadContent={"Base"} dropDownHeight="2000px">
+					<div>
+						<InnerDropDown
+							headerText={"Object Fit"}
+							arrayOfClasses={[
+								".object-contain: Object fits within the container with aspect ratio preserved.",
+								".object-cover: Object fills the container while maintaining aspect ratio.",
+								".object-fill: Object stretches to fill the container, ignoring aspect ratio.",
+								".object-none: Object is displayed at its intrinsic size.",
+								".object-scale-down: Object scales down to fit within the container.",
+							]}
+						/>
+
+						<InnerDropDown
+							headerText={"Positioning"}
+							arrayOfClasses={[
+								".tp-1 to .tp-20: Top positioning from 0.5rem to 10rem in increments of 0.5rem.",
+								".rh-1 to .rh-20: Right positioning from 0.5rem to 10rem in increments of 0.5rem.",
+								".bt-1 to .bt-20: Bottom positioning from 0.5rem to 10rem in increments of 0.5rem.",
+								".lf-1 to .lf-20: Left positioning from 0.5rem to 10rem in increments of 0.5rem.",
+							]}
+						/>
+
+						<InnerDropDown
+							headerText={"Z-index"}
+							arrayOfClasses={[
+								".z-index-0 to .z-index-50: Z-index values from 0 to 50.",
+								".z-index-auto: Automatically sets the z-index based on stacking context.",
+							]}
+						/>
+
+						<InnerDropDown
+							headerText={"Visibility"}
+							arrayOfClasses={[
+								".visible-xs: Visible on extra small screens (0px and up).",
+								".hidden-xs: Hidden on extra small screens (0px and up), but it still occupies space.",
+								".visible-sm: Visible on small screens (768px and up).",
+								".hidden-sm: Hidden on small screens (768px and up), but it still occupies space.",
+								".visible-md: Visible on medium screens (992px and up).",
+								".hidden-md: Hidden on medium screens (992px and up), but it still occupies space.",
+								".visible-lg: Visible on large screens (1200px and up).",
+								".hidden-lg: Hidden on large screens (1200px and up), but it still occupies space.",
+							]}
+						/>
+
+						<InnerDropDown
+							headerText={"Overflow"}
+							arrayOfClasses={[
+								".overflow-auto: Automatically adds scrollbars when necessary.",
+								".overflow-hidden: Clips the content if it overflows.",
+								".overflow-visible: Content is not clipped and is visible outside the element.",
+								".overflow-scroll: Always shows scrollbars.",
+							]}
+						/>
+
+						<InnerDropDown
+							headerText={"Opacity"}
+							arrayOfClasses={[
+								".opacity-0 to .opacity-100: Opacity levels from 0 to 100 in increments of 1.",
+							]}
+						/>
+
+						<InnerDropDown
+							headerText={"Cursor"}
+							arrayOfClasses={[
+								".cursor-pointer: Changes the cursor to a pointer (hand icon).",
+								".cursor-default: Resets the cursor to the default arrow.",
+								".cursor-not-allowed: Shows a 'not allowed' cursor (circle with a slash).",
+								".cursor-wait: Shows a waiting cursor (spinning wheel or hourglass).",
+							]}
+						/>
+
+						<InnerDropDown
+							headerText={"Width and Height Utilities"}
+							arrayOfClasses={[
+								".w-1 to .w-100: Width percentage values from 1% to 100%.",
+								".h-1 to .h-100: Height percentage values from 1% to 100%.",
+								".w-1px to .w-1000px: Width in pixels from 1px to 1000px.",
+								".h-1px to .h-1000px: Height in pixels from 1px to 1000px.",
+							]}
+						/>
+					</div>
+				</DropDown>
 				<DropDown dropDownHeadContent={"typography"} dropDownHeight={"2100px"}>
 					<div>
 						<InnerDropDown
@@ -243,6 +327,68 @@ export default function Usage() {
 							</p>
 						</div>
 					</div>
+				</DropDown>
+				<DropDown dropDownHeadContent={"FlexBox"} dropDownHeight={"500px"}>
+					<InnerDropDown
+						headerText={"Flex direction"}
+						arrayOfClasses={[
+							".flex-row: Default flex direction (row).",
+							".flex-row-reverse: Flex direction set to row-reverse.",
+							".flex-column: Flex direction set to column.",
+							".flex-column-reverse: Flex direction set to column-reverse.",
+						]}
+					/>
+					<InnerDropDown
+						headerText={"Justify content"}
+						arrayOfClasses={[
+							".justify-content-start: Justify content to the start.",
+							".justify-content-end: Justify content to the end.",
+							".justify-content-center: Justify content to the center.",
+							".justify-content-between: Justify content evenly, with space between items.",
+							".justify-content-around: Justify content evenly, with space around items.",
+							".justify-content-evenly: Justify content with equal space around each item.",
+						]}
+					/>
+					<InnerDropDown
+						headerText={"Align items"}
+						arrayOfClasses={[
+							".align-items-start: Aligns flex items to the start.",
+							".align-items-end: Aligns flex items to the end.",
+							".align-items-center: Aligns flex items in the center.",
+							".align-items-baseline: Aligns flex items according to the baseline.",
+							".align-items-stretch: Stretch flex items to fill the container.",
+						]}
+					/>
+					<InnerDropDown
+						headerText={"Align self"}
+						arrayOfClasses={[
+							".align-self-auto: Default align self behavior.",
+							".align-self-start: Aligns a flex item to the start.",
+							".align-self-end: Aligns a flex item to the end.",
+							".align-self-center: Aligns a flex item to the center.",
+							".align-self-baseline: Aligns a flex item according to the baseline.",
+							".align-self-stretch: Stretch a flex item to fill the container.",
+						]}
+					/>
+					<InnerDropDown
+						headerText={"Flex wrap"}
+						arrayOfClasses={[
+							".flex-nowrap: Flex items will not wrap.",
+							".flex-wrap: Flex items will wrap to the next line.",
+							".flex-wrap-reverse: Flex items will wrap to the next line in reverse order.",
+						]}
+					/>
+					<InnerDropDown
+						headerText={"Align content"}
+						arrayOfClasses={[
+							".align-content-start: Aligns the flex lines to the start.",
+							".align-content-end: Aligns the flex lines to the end.",
+							".align-content-center: Aligns the flex lines to the center.",
+							".align-content-between: Aligns the flex lines with space between them.",
+							".align-content-around: Aligns the flex lines with space around them.",
+							".align-content-stretch: Stretches the flex lines to fill the container.",
+						]}
+					/>
 				</DropDown>
 				<DropDown dropDownHeadContent={"Border"} dropDownHeight={"500px"}>
 					<InnerDropDown
