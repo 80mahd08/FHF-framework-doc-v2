@@ -9,4 +9,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 		<AnimatedRoutes />
 	</Router>
 );
-cd;
